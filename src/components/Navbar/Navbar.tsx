@@ -1,14 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
     return (
         <>
             <nav>
-                <div className="nav border-2 border-red-400">
-                    <div className="container border-2 border-blue-400 mx-auto py-8">
+                <div className="nav">
+                    <div
+                        className={`container flex justify-between items-center mx-auto py-2 ${styles.navContainer}`}
+                    >
                         <div className={styles.logo}>
                             <Link href="/">
                                 <Image
@@ -20,7 +22,30 @@ export default function Navbar() {
                                 />
                             </Link>
                         </div>
-                        <div className="menu">menu</div>
+                        <div className={styles.menu}>
+                            <ul className="flex justify-between items-center gap-x-10">
+                                <li>
+                                    <Link href="/" className="text-white">
+                                        Home
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/" className="text-white">
+                                        Services
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/" className="text-white">
+                                        Contact
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/" className="text-white">
+                                        About
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
